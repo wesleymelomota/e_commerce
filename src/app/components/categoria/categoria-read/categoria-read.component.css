@@ -1,0 +1,28 @@
+.tabela{
+    display: flex;
+    
+    width: 100%;
+    margin-left: 10%;
+}
+
+.form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form .card{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 5px;
+}
+.form form .btns{
+    display: flex;
+    justify-content: center;
+}

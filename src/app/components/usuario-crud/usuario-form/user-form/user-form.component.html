@@ -1,0 +1,41 @@
+<div class="example-container container">
+  <mat-card class="card">
+    <form  class="form">
+  
+      <mat-form-field  appearance="fill">
+          <mat-label>Nome</mat-label>
+          <input matInput  placeholder="" [(ngModel)]="usuario.name" name="name">
+      </mat-form-field>
+      <mat-form-field hintLabel="Max 30 characters" appearance="fill">
+          <mat-label>Nome de usuario</mat-label>
+          <input matInput #input maxlength="30" [(ngModel)]="usuario.username" name="username" placeholder="">
+          <mat-hint align="end">{{input.value.length}}/30</mat-hint>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+          <mat-label >Email</mat-label>
+          <input matInput  placeholder="email@example.com" [(ngModel)]="usuario.email" name="email" required><!--[formControl]="email"-->
+          <mat-error  *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Senha</mat-label>
+        <input matInput [(ngModel)]="usuario.password" [type]="hide ? 'password' : 'text'" name="password">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+          <mat-label>Perfil</mat-label>
+          <mat-select [(ngModel)]="usuario.role" name="role">
+            <mat-option *ngFor="let role of roles"    [value]="role">{{role.id}} | {{role.nome}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      <div class="btns">
+          <button class="m-2" mat-raised-button (click)="save()" color="primary">Salvar</button>
+          <button class="m-2" mat-raised-button color="primary">Cancelar</button>
+      </div>
+    </form>
+  </mat-card>
+</div>
+  

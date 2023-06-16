@@ -1,0 +1,20 @@
+.header{
+    display: block;
+    height: 90px;
+}
+.header .nav{
+    display: flex;
+}
+.bg-nav{
+    background-color: #334075; 
+    color: #F2294E;
+    width: 100%;
+}
+
+@media screen and (max-width: 781px) {
+    .conteudo {
+        display: flex;
+        overflow: scroll;
+        
+    }
+}

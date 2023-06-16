@@ -1,0 +1,22 @@
+
+.header{
+    height: 130px;
+    display: block;
+    border-top: 0;
+    /*position: fixed;*/
+}
+.title{
+    text-align: center;
+
+}
+.container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.container .categoria{
+    margin-bottom: 0%;
+}
+.header .container .btns button{
+    margin: 5px;
+}

@@ -1,0 +1,28 @@
+<main class="main d-flex justify-content-center align-items-center m-3" >
+    <form action="" class="formulario">
+        <h4><strong>Enviar uma Mensagem :)</strong></h4>
+        <mat-form-field>
+            <mat-label>Seu Nome</mat-label>
+           
+            <input matInput name="ownerRef" [(ngModel)]="emailDto.ownerRef">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Seu Email</mat-label>
+          <input matInput placeholder="pat@example.com" name="emailFrom" [(ngModel)]="emailDto.emailFrom" required>
+          <!--<mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>-->
+        </mat-form-field>
+        
+        <mat-form-field>
+            <mat-label>Assunto</mat-label>
+            <input matInput name="subject" type="text" [(ngModel)]="emailDto.subject">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Mensagem:</mat-label>
+            <textarea matInput name="text" type="text" [(ngModel)]="emailDto.text"></textarea>
+          </mat-form-field>
+          <span>
+              <button routerLink="/" class="btn btn-success m-1">Enviar</button>
+              <button routerLink="/" class="btn btn-secondary m-1">voltar</button>
+          </span>
+    </form>
+</main>

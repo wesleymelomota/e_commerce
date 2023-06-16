@@ -1,0 +1,77 @@
+<nav class="navbar navbar-expand-lg  bg-nav" >
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/administracao-site" style="color: #F2294E;">Manutenção do Site</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a routerLink="/administracao-site" ><button mat-button style="color: #05C7F2;">Lista de Pedidos</button></a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="produto/visualizar" ><button mat-button style="color: #05C7F2;">Produtos</button></a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="usuario/visualizar" ><button mat-button style="color: #05C7F2;">Usuarios</button></a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="cliente/visualizar" ><button mat-button style="color: #05C7F2;">Clientes </button></a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="categoria/visualizar" ><button mat-button style="color: #05C7F2;">Categorias</button></a>
+        </li>
+       
+        <li class="nav-item dropdown">
+          <a style="background-color: #334075; color: #05C7F2;" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Cadastrar
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item active" routerLink="produto/cadastrar" style="color: white;">Produto
+            </a></li>
+            <li><a class="dropdown-item" routerLink="usuario/cadastrar" style="color: white;">Usuario</a></li>
+            <li><a class="dropdown-item" routerLink="categoria/cadastrar">Categoria</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+      </ul>
+      <button mat-button routerLink="/login" style="color: #05C7F2;">Sair</button>
+    </div>
+  </div>
+</nav>
+<!--<mat-toolbar  class="header" style="background-color: #334075; color: #F2294E">
+    <div style="text-align: center;">Pagina de manutenção</div>
+    <nav class="nav">
+      <a routerLink="/admin" style="color: #F2294E;"><button mat-button>Lista de Pedidos</button></a>
+      <a routerLink="produto/visualizar" style="color: #F2294E;"><button mat-button>Produtos</button></a>
+      <a routerLink="usuario/visualizar" style="color: #F2294E;"><button mat-button>Usuarios</button></a>
+      <a routerLink="cliente/visualizar" style="color: #F2294E;"><button mat-button>Clientes</button></a>
+      <a routerLink="categoria/visualizar" style="color: #F2294E;"><button mat-button>Categorias</button></a>
+      <a routerLink="#" style="color: #F2294E;"><button mat-button>Estoque</button></a>
+      <div class="dropdown">
+        <button style="background-color: #334075; color: #F2294E;" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Cadastrar
+        </button>
+        <ul class="dropdown-menu dropdown-menu-dark">
+          <li><a class="dropdown-item active" routerLink="produto/cadastrar" style="color: white;">Produto
+          </a></li>
+          <li><a class="dropdown-item" routerLink="usuario/cadastrar" style="color: white;">Usuario</a></li>
+          <li><a class="dropdown-item" href="#">Perfil de acesso</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" routerLink="categoria/cadastrar">Categoria</a></li>
+        </ul>
+      </div>
+      <button mat-button routerLink="/login" color="basic">Sair</button>
+    </nav>
+
+</mat-toolbar>-->
+<div class="container d-flex conteudo" style="height: 100vh; width: 100%;">
+  <router-outlet></router-outlet>
+
+</div>
+
+<!--<mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start" color="primary">
+  <mat-tab label="Produto"><app-produto></app-produto></mat-tab>
+  <mat-tab label="Usuario"><app-usuario></app-usuario></mat-tab>
+  <mat-tab label="Cliente">Content 3</mat-tab>
+</mat-tab-group>-->

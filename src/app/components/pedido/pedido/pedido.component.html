@@ -1,0 +1,113 @@
+<div class="cliente d-flex" *ngFor="let cliente of clientes">
+    <!--<mat-form-field>
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. xbox" #input>
+    </mat-form-field>-->
+    
+    <!--<table mat-table [dataSource]="dataSource" class="mat-elevation-z10">
+    
+      
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Id#</th>
+        <td mat-cell *matCellDef="let cliente"> {{cliente.id}} </td>
+      </ng-container>
+    
+      
+      <ng-container matColumnDef="cliente">
+        <th mat-header-cell *matHeaderCellDef> Cliente </th>
+        <td mat-cell *matCellDef="let cliente"> {{cliente.nome}} </td>
+      </ng-container>
+      <ng-container matColumnDef="endereco">
+        <th mat-header-cell *matHeaderCellDef> Endereço </th>
+        <td mat-cell *matCellDef="let cliente"> {{cliente.endereco}} </td>
+      </ng-container>
+    
+      
+      <ng-container matColumnDef="data pedido">
+        <th mat-header-cell *matHeaderCellDef> Data Pedido </th>
+        <td mat-cell *matCellDef="let cliente"> {{cliente.dataCompra}} </td>
+      </ng-container>
+    
+      
+      <ng-container matColumnDef="produto">
+        <th mat-header-cell *matHeaderCellDef> Produto </th>
+        <td mat-cell *matCellDef="let cliente"> {{cliente.itens.produto.nome}} </td>
+      </ng-container>
+      
+      <ng-container matColumnDef="preço produto">
+        <th mat-header-cell *matHeaderCellDef> Preço produto </th>
+        <td mat-cell *matCellDef="let cliente"> {{cliente.categoria.nome}} </td>
+      </ng-container>
+      <ng-container matColumnDef="total">
+        <th mat-header-cell *matHeaderCellDef> Total R$ </th>
+        <td mat-cell *matCellDef="let cliente"> {{cliente.total}} </td>
+      </ng-container>
+      <ng-container matColumnDef="acoes">
+        <th mat-header-cell *matHeaderCellDef>Selecione </th>
+        <td mat-cell *matCellDef="let cliente"> 
+          <span style="display: flex; margin: 2px;">
+            <button  data-bs-toggle="modal" 
+            data-bs-target="#exampleModal" style="margin: 2px;" 
+            mat-mini-fab color="warn" aria-label="Example icon button with a delete icon" >
+              <mat-icon>delete</mat-icon>
+            </button>
+            <button  style="margin: 2px;" mat-mini-fab color="primary" aria-label="Example icon button with a delete icon">
+              <mat-icon>edit</mat-icon>
+            </button>
+          </span>
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let cliente; columns: displayedColumns;"></tr>
+    
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">cliente não encontrado "{{input.value}}"</td>
+      </tr>
+      
+    </table>-->
+      <!--<span class="clientes m-2" >
+        <h4>Pedido</h4>
+          
+          <ul style="font-size: 1.2rem;">
+            <li>Cliente: {{cliente.nome}}</li>
+            <li>Endereço: {{cliente.endereco}}</li>
+            <ul *ngFor="let pedido of cliente.pedidos">
+              <li>Status: {{pedido.status}}</li>
+              <li>Data da Compra: {{pedido.dataCompra | date: "dd/MMM/yyyy":"pt" | uppercase}}</li>
+              <li>Total pedido: {{pedido.total | currency : 'BRL'}}</li>
+              <ul *ngFor="let item of pedido.itens">
+                <li>Produto: {{item.produto.nome}}</li>
+                <li>Quantidade: {{item.quantidade}}</li>
+                <li>{{item.produto.preco | currency : 'BRL'}}</li>
+              </ul>
+            </ul>
+          </ul>
+          <hr>
+          <span>
+            <button class="btn btn-danger">Deletar</button>
+          </span>
+      </span>-->
+  </div>
+  <div class="d-flex pedidos" *ngFor="let pedido of pedidos">
+    <span class="clientes m-2" >
+      <h4>Pedido #{{pedido.id}}</h4>
+        
+        <ul style="font-size: 1.2rem;">
+          <ul >
+           
+            <li>Data da Compra: {{pedido.dataCompra | date: "dd/MMM/yyyy":"pt" | uppercase}}</li>
+            <li>Total pedido: {{pedido.total | currency : 'BRL'}}</li>
+            <ul *ngFor="let item of pedido.itens">
+              <li>Produto: {{item.produto.nome}}</li>
+              <li>Quantidade: {{item.quantidade}}</li>
+              <li>{{item.produto.preco | currency : 'BRL'}}</li>
+            </ul>
+          </ul>
+        </ul>
+        <hr>
+        <span>
+          <button class="btn btn-danger" (click)="removerPedido(pedido.id)">Remover</button>
+        </span>
+    </span>
+  </div>

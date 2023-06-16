@@ -1,0 +1,84 @@
+<div class="main">
+
+
+<div class="detalhe-produto container" *ngIf="formCliente == false" style="margin-top: 4%;">
+    <mat-card class="mat-card    row">
+      <div class="col-sm-3 m-2">
+        <mat-card-title ><h3 style="font-family: sans-serif; font-size: 1.6rem;" >{{produto.nome}}</h3> </mat-card-title>
+
+      </div>
+      <div class="col-sm-4 m-2">
+        <img mat-card-image [src]="urlImagem+produto.urlImagem" class="d-block w-100 img-produto" alt="Produto">
+
+      </div>
+      <div class="col-sm-8">
+        <p style="font-family: sans-serif; font-size: 1.0rem;">
+          {{produto.descricao}}
+        </p>
+      </div>
+      <div class="col-sm-3 m-2">
+        
+        <p style="font-family: sans-serif; font-size: 1.1rem;">
+          {{produto.preco | currency : 'BRL'}}
+        </p>
+        <p *ngIf="produto.promocao">
+          Promoção com 3% de desconto
+        </p>
+        <mat-label>Quantidade:</mat-label>
+        <input matInput type="number" [(ngModel)]="item.quantidade" value="1" name="quantidade">
+      </div>
+      <div class="col-sm d-flex justify-content-start btns">
+        <span>
+          <button  class="btn btn-primary m-2" (click)="comprar()">Comprar</button>
+        </span>
+        <span class="" >
+          <button class="btn btn-success m-2 " (click)="addCarrinho()">Adicionar ao carrinho</button>
+        </span>
+        <span>
+          <button class="btn btn-secondary m-2" (click)="cancel()">Cancelar</button>
+        </span>
+      </div>
+    </mat-card>
+        
+</div>
+<span class="d-block" *ngIf="formCliente" style="margin-top: 4%;">
+  <mat-card style="width: 70%;">
+          <mat-card-content class="d-flex flex-column " >
+          <mat-form-field class="example-form-field m-2">
+              <mat-label>Nome</mat-label>
+              <input matInput type="text" name="nome" class="" [(ngModel)]="cliente.nome">
+          </mat-form-field>
+          <mat-form-field class="example-form-field m-2">
+              <mat-label>Data Nascimento</mat-label>
+              <input matInput type="date" name="dataNascimento" class="" [(ngModel)]="cliente.dataNascimento">
+          </mat-form-field>
+          
+          <mat-form-field class="example-form-field m-2">
+              <mat-label>CPF</mat-label>
+              <input matInput type="text" name="cpf" class="" [(ngModel)]="cliente.cpf">
+          </mat-form-field>
+          <mat-form-field class="example-form-field m-2 ">
+              <mat-label>Telefone</mat-label>
+              <input matInput type="text" name="telefone" class="" [(ngModel)]="cliente.telefone">
+          </mat-form-field>
+          <mat-form-field class="example-form-field m-2">
+              <mat-label>Endereço</mat-label>
+              <input matInput type="text" name="endereco" class="" [(ngModel)]="cliente.endereco">
+          </mat-form-field>
+          <mat-form-field class="example-form-field m-2">
+              <mat-label>Cep</mat-label>
+              <input matInput type="text" name="cep" class="" [(ngModel)]="cliente.cep">
+          </mat-form-field>
+              <span>
+                  <button  (click)="save()" class="btn btn-success m-2" style="width: 70px;">Salvar</button>
+                  <button  (click)="cancelForm()" class="btn btn-success m-2" style="width: 70px;">Cancelar</button>
+              </span>
+
+          </mat-card-content>
+      </mat-card>
+  </span>
+  
+</div>
+<!--<app-root></app-root>
+<app-footer></app-footer>
+-->

@@ -1,0 +1,10 @@
+.container{
+    display: block;
+}
+
+.container .table{
+    
+    display: block;
+    justify-content: center;
+    align-items: center;
+}

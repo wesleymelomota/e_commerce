@@ -1,0 +1,37 @@
+<div class="example-container container" style="margin-top: 5%;">
+    <mat-card class="card m-3">
+      <mat-card-title style="margin-right: 65%;">Criar uma Conta</mat-card-title>
+      <form  class="form">
+    
+        <mat-form-field  appearance="fill">
+            <mat-label>Nome</mat-label>
+            <input matInput  placeholder="" [(ngModel)]="usuario.name" name="name" required>
+        </mat-form-field>
+        <mat-form-field hintLabel="Max 30 characters" appearance="fill">
+            <mat-label>Nome de usuario</mat-label>
+            <input matInput #input maxlength="30" [(ngModel)]="usuario.username" name="username" placeholder="" required>
+            <mat-hint align="end">{{input.value.length}}/30</mat-hint>
+        </mat-form-field>
+    
+        <mat-form-field appearance="fill">
+            <mat-label >Email</mat-label>
+            <input matInput  placeholder="email@example.com" [(ngModel)]="usuario.email" name="email" required><!--[formControl]="email"-->
+            
+        </mat-form-field>
+    
+        <mat-form-field appearance="fill">
+          <mat-label>Senha</mat-label>
+          <input matInput [(ngModel)]="usuario.password" [type]="hide ? 'password' : 'text'" name="password" required>
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+        
+        <div class="btns">
+            <button class="m-2 btn btn-success"  (click)="save()" >Enviar</button>
+            <button class="m-2 btn btn-secondary" routerLink="/"  >Cancelar</button>
+        </div>
+      </form>
+    </mat-card>
+  </div>
+    

@@ -1,0 +1,66 @@
+.example-card {
+    max-width: 300px;
+    margin: 3px;
+}
+
+.example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+}
+.produto-read{
+    display: flex;
+    flex-direction: column;
+    background-color: #ffede1;
+}
+.produto-read .content{
+    display: flex;
+    flex-wrap: wrap;
+}
+.produto-read .anuncio h3{
+    font-size: 1.3rem;
+    text-align: center;
+}
+.produto-read .paginator{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.example-card {
+    max-width: 300px;
+    margin: 3px;
+}
+  
+.produto-promocao{
+    display: flex;
+    flex-direction: column;
+    /*background-color: #ffede1;*/
+    background: #000428;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #004e92, #000428);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #004e92, #000428); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.img-produto{
+    max-width: 400px;
+    max-height: 300px;
+}
+.sombra{
+    filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.7));
+}
+.vidro{
+    background-color: #ffffff10;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+.produto-promocao .content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.produto-promocao .anuncio h3{
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.widht-slid{
+    width: 30%;
+}

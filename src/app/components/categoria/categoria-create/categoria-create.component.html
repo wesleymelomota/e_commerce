@@ -1,0 +1,14 @@
+<div class="form">
+    <mat-card class="card">
+        <form action="">
+            <mat-form-field class="example-form-field">
+              <mat-label>Nome</mat-label>
+              <input matInput type="text" [(ngModel)]="categoria.nome" name="nome">
+            </mat-form-field>
+            <div class="btns">
+            <button style="margin: 3px;" mat-stroked-button (click)="save()" color="primary">Salvar</button>
+            <button style="margin: 3px;" mat-stroked-button (click)="cancel()" color="basic">Cancelar</button>
+            </div>
+        </form>
+    </mat-card>
+</div>

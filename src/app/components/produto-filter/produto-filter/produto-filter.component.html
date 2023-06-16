@@ -1,0 +1,36 @@
+<div class="d-block container-fluid main" style="background-color:#ffede1;  width: 100%; margin-top: 4%;">
+    <span class="bt-voltar m-3 d-flex flex-direction-column justify-content-end" style="margin-top: 7%; height: 60px;">
+        
+        <a class="icon-link link-offset-2 link-underline link-underline-opacity-0" routerLink="/" style="color: black; font-size: 1rem;">
+         < Voltar
+          <svg class="bi" aria-hidden="true"><use xlink:href="#arrow-left"></use></svg>
+        </a>
+    </span>
+    <div class="d-flex conteudo flex-wrap align-items-stretch" >
+        <mat-card class="example-card mat-elevation-z10 m-3" *ngFor="let produto of produtos">
+            <mat-card-header>
+              
+              <mat-card-title>{{produto.nome}} </mat-card-title>
+             
+            </mat-card-header>
+            <img mat-card-image [src]="urlImagem+produto.urlImagem" alt="">
+            <mat-card-content>
+              <p>
+                {{produto.descricao}}
+              </p>
+              <p>
+                R$: {{produto.preco}}
+              </p>
+              <p *ngIf="produto.promocao"><!---->
+                Promoção com 3% de desconto
+              </p>
+            </mat-card-content>
+            
+            <mat-card-actions>
+              <button routerLink="/index/detalhe-produto/{{produto.id}}" class="btn" style="background-color: #05C7F2;">Comprar</button>
+            </mat-card-actions>
+          </mat-card>
+
+    </div>
+    <app-footer></app-footer>
+</div>

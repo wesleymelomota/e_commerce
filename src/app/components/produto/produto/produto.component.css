@@ -1,0 +1,10 @@
+.produto{
+    display: block;
+}
+.produto .nav nav{
+    display: flex;
+    
+}
+.produto .content{
+    margin-right: 8px;
+}

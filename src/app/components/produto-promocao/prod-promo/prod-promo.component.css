@@ -1,0 +1,25 @@
+.example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+}
+.example-card {
+    max-width: 300px;
+    margin: 3px;
+}
+  
+.produto-promocao{
+    display: flex;
+    flex-direction: column;
+}
+.produto-promocao .content{
+    display: flex;
+    flex-wrap: wrap;
+}
+.produto-promocao .anuncio h3{
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.widht-slid{
+    width: 30%;
+}

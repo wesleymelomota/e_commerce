@@ -1,0 +1,129 @@
+<div style="width: 100%; margin-top: 8%;">
+    
+    <mat-tab-group>
+        <mat-tab label="Informações login">
+            <div class="info" style="width: 100%;">
+                <div class="example-container container">
+                    <mat-card class="card shadow p-3 mb-5 bg-body-tertiary rounded">
+                      <form  class="formulario ">
+                        
+                        <mat-form-field hintLabel="Max 40 characters" appearance="fill">
+                            <mat-label>Nome</mat-label>
+                            <input matInput #input maxlength="40"   [(ngModel)]="usuario.name" name="name">
+                            <mat-hint align="end">{{input.value.length}}/40</mat-hint>
+                        </mat-form-field>
+                        <mat-form-field hintLabel="Max 30 characters" appearance="fill">
+                            <mat-label>Nome de usuario</mat-label>
+                            <input matInput #input maxlength="30" [(ngModel)]="usuario.username" name="username">
+                            <mat-hint align="end">{{input.value.length}}/30</mat-hint>
+                        </mat-form-field>
+                    
+                        <mat-form-field appearance="fill">
+                            <mat-label >Email</mat-label>
+                            <input matInput  [(ngModel)]="usuario.email" name="email" required><!--[formControl]="email"-->
+                        </mat-form-field>
+                        
+                        
+                        <div class="btns">
+                            <button class="btn btn-info m-2" (click)="save()" style="color: white">Salvar</button>
+                            <button class="m-2 btn btn-secondary"  routerLink="/" >Cancelar</button>
+                        </div>
+                      </form>
+                    </mat-card>
+                  </div>
+                    
+            </div>
+            
+        </mat-tab>
+        <mat-tab label="Informações gerais">
+            <div class="form">
+                <mat-card class="card">
+            
+                    <form action="">
+                        <mat-form-field class="example-form-field">
+                          <mat-label>Nome</mat-label>
+                          <input matInput type="text" name="nome" [(ngModel)]="cliente.nome">
+                        </mat-form-field>
+                        <mat-form-field class="example-form-field">
+                          <mat-label>Data Nascimento</mat-label>
+                          <input matInput type="date" name="dataNascimento" [(ngModel)]="cliente.dataNascimento">
+                        </mat-form-field>
+                      <mat-form-field class="example-form-field">
+                        <mat-label>CPF</mat-label>
+                        <input matInput type="text" name="cpf" [(ngModel)]="cliente.cpf">
+                      </mat-form-field>
+                      
+                      <mat-form-field class="example-form-field">
+                        <mat-label>Telefone</mat-label>
+                        <input matInput type="text" name="telefone" [(ngModel)]="cliente.telefone">
+                      </mat-form-field>
+                      <mat-form-field class="example-form-field">
+                        <mat-label>Endereço</mat-label>
+                        <input matInput type="text" name="endereco" [(ngModel)]="cliente.endereco">
+                      </mat-form-field>
+                      <mat-form-field class="example-form-field">
+                        <mat-label>CEP</mat-label>
+                        <input matInput type="text" name="cep"[(ngModel)]="cliente.cep">
+                      </mat-form-field>
+                      
+                      <div class="btns d-flex align-items-center justify-content-center">
+                        <button  (click)="saveCliente()" class="btn btn-info" style="color: white">Salvar</button>
+                        
+                      </div>
+                    </form>
+                </mat-card>
+            </div>
+        </mat-tab>
+        <mat-tab label="Excluir Conta"> 
+            <div class="form">
+                <mat-card class="card">
+            
+                    <form action="">
+                        <mat-form-field class="example-form-field">
+                          <mat-label>Nome</mat-label>
+                          <input matInput type="text" name="nome" [(ngModel)]="cliente.nome" disabled>
+                        </mat-form-field>
+                        <mat-form-field hintLabel="Max 30 characters" appearance="fill">
+                            <mat-label>Nome de usuario</mat-label>
+                            <input matInput #input maxlength="30" [(ngModel)]="usuario.username" name="username" disabled>
+                            <mat-hint align="end">{{input.value.length}}/30</mat-hint>
+                        </mat-form-field>
+                    
+                        <mat-form-field appearance="fill">
+                            <mat-label >Email</mat-label>
+                            <input matInput  [(ngModel)]="usuario.email" name="email" disabled><!--[formControl]="email"-->
+                        </mat-form-field>
+                        <mat-form-field class="example-form-field">
+                          <mat-label>Data Nascimento</mat-label>
+                          <input matInput type="date" name="dataNascimento" [(ngModel)]="cliente.dataNascimento" disabled>
+                        </mat-form-field>
+                      <mat-form-field class="example-form-field">
+                        <mat-label>CPF</mat-label>
+                        <input matInput type="text" name="cpf" [(ngModel)]="cliente.cpf" disabled>
+                      </mat-form-field>
+                      
+                      <mat-form-field class="example-form-field">
+                        <mat-label>Telefone</mat-label>
+                        <input matInput type="text" name="telefone" [(ngModel)]="cliente.telefone" disabled>
+                      </mat-form-field>
+                      <mat-form-field class="example-form-field">
+                        <mat-label>Endereço</mat-label>
+                        <input matInput type="text" name="endereco" [(ngModel)]="cliente.endereco" disabled>
+                      </mat-form-field>
+                      <mat-form-field class="example-form-field">
+                        <mat-label>CEP</mat-label>
+                        <input matInput type="text" name="cep"[(ngModel)]="cliente.cep" disabled>
+                      </mat-form-field>
+                      
+                      <div class="btns d-flex align-items-center justify-content-center">
+                        <button  (click)="excluirConta()" class="btn btn-danger">Excluir</button>
+                        
+                      </div>
+                    </form>
+                </mat-card>
+            </div>
+        </mat-tab>
+      </mat-tab-group>
+      
+</div>
+

@@ -1,0 +1,56 @@
+<div class="pedido m-2 container pt-5">
+    <button routerLink="/" class="btn btn-primary">voltar</button>
+    <h3>total do seu pedido: {{totalFormatado}}</h3>
+    <p>Seus Itens:</p>
+    <span class="produtos " *ngFor="let item of pedido.itens">
+        <ol class="" style="width: 60%; margin-left: 6px;">
+            <li class="">Produto: {{item.produto.nome}}</li>
+            <li class="">Preço R$: {{item.produto.preco}}</li>
+            <li class="">Categoria: {{item.produto.categoria.nome}}</li>
+            <li class="">Quantidade: {{item.quantidade}}</li>
+        </ol>
+    </span>
+    
+    <span class="d-block" *ngIf="existCliente == false">
+    <mat-card style="width: 70%;">
+            <mat-card-content class="d-flex flex-column " >
+            <mat-form-field class="example-form-field m-2">
+                <mat-label>Nome</mat-label>
+                <input matInput type="text" name="nome" class="" [(ngModel)]="cliente.nome">
+            </mat-form-field>
+            <mat-form-field class="example-form-field m-2">
+                <mat-label>Data Nascimento</mat-label>
+                <input matInput type="date" name="dataNascimento" class="" [(ngModel)]="cliente.dataNascimento">
+            </mat-form-field>
+            
+            <mat-form-field class="example-form-field m-2">
+                <mat-label>CPF</mat-label>
+                <input matInput type="text" name="cpf" class="" [(ngModel)]="cliente.cpf">
+            </mat-form-field>
+            <mat-form-field class="example-form-field m-2 ">
+                <mat-label>Telefone</mat-label>
+                <input matInput type="text" name="telefone" class="" [(ngModel)]="cliente.telefone">
+            </mat-form-field>
+            <mat-form-field class="example-form-field m-2">
+                <mat-label>Endereço</mat-label>
+                <input matInput type="text" name="endereco" class="" [(ngModel)]="cliente.endereco">
+            </mat-form-field>
+            <mat-form-field class="example-form-field m-2">
+                <mat-label>Cep</mat-label>
+                <input matInput type="text" name="cep" class="" [(ngModel)]="cliente.cep">
+            </mat-form-field>
+                <span>
+                    <button  (click)="save()" class="btn btn-success m-2" style="width: 70px;">Salvar</button>
+                </span>
+
+            </mat-card-content>
+        </mat-card>
+    </span>
+    <span class="btns m-4">
+        <span *ngIf="pedidoFechado">
+            <button (click)="finalizar()" class="btn btn-success m-2">Finalizar Compra</button>
+        </span>
+        <button (click)="cancel()" class="btn btn-secondary m-2">Cancelar</button>
+    </span>
+<!---->
+</div>
