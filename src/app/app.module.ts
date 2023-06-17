@@ -50,7 +50,6 @@ import { UsuarioConfigComponent } from './components/usuario-config-conta/usuari
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found/page-not-found.component';
 import { ProdutoFilterComponent } from './components/produto-filter/produto-filter/produto-filter.component';
 import { PedidoComponent } from './components/pedido/pedido/pedido.component';
-import { EstoqueComponent } from './components/estoque/estoque/estoque.component';
 import { EmailFormComponent } from './components/emailService/email-form/email-form.component';
 import { MatSortModule } from '@angular/material/sort';
 
@@ -85,7 +84,6 @@ import { MatSortModule } from '@angular/material/sort';
     PageNotFoundComponent,
     ProdutoFilterComponent,
     PedidoComponent,
-    EstoqueComponent,
     EmailFormComponent
   ],
   imports: [
