@@ -2,6 +2,7 @@
 
 # Compiled output
 /dist
+/dist/fron-end-loja-virual
 /tmp
 /out-tsc
 /bazel-out
